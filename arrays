@@ -1,0 +1,90 @@
+using System;
+using System.Numerics;
+using System.Runtime.Intrinsics.X86;
+using System.Security.Cryptography;
+using System.Xml.Schema;
+
+namespace mohamed
+{
+        class Program 
+    { 
+        static void Main() 
+        {
+          Console.Write(" Enter your name :");
+           string  name = Console.ReadLine();
+            
+            
+            
+            Console.Write("Enter your age :");
+            int age = Convert.ToInt32(Console.ReadLine());
+
+            if (age >= 18)
+            {
+                Console.WriteLine("you are allowed ");
+               
+            }
+            else if (age < 18)
+            {
+                Console.WriteLine("you are not allowed ");
+                return;
+            }
+
+                int materials;
+             do
+            {
+                Console.Write("Enter the number of your materials (1:10) :");
+                materials = Convert.ToInt32(Console.ReadLine());
+            }
+             while (materials < 1 || materials > 10);
+
+             int [] score = new int [materials];
+
+            for (int i = 0; i < materials; i++)
+            {
+                Console.Write("Enter your score for material " + (i + 1) + " : ");
+                score[i] =Convert.ToInt32(Console.ReadLine());
+            }
+
+            float sum = 0;
+           
+            for (int i = 0; i < materials; i++)
+            {
+                sum += score[i];
+            }
+            float avg= sum / materials;
+           
+           
+            int max = 0;
+
+            for (int i = 0; i < materials; i++)
+            {
+                if ( score[i] > max)
+                {
+                  max = score[i];
+                }
+            }
+           
+
+
+            int min  = max;
+
+            for (int i = 0; i < materials; i++)
+            {
+                if (score[i] < min )
+                {
+                    min = score[i];
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine($"The student name is : {name}");
+            Console.WriteLine($"The student age is : {age}");
+            Console.WriteLine($"The score avg is : {avg}");
+            Console.WriteLine($"The score max  is : {max}");
+            Console.WriteLine($"The score min is : {min}");
+
+        }
+
+    }
+
+}
