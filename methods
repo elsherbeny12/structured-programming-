@@ -1,0 +1,60 @@
+using System;
+
+namespace mohamed
+{
+    class Methods
+    {
+        static void Main()
+        {
+            string name = Name();
+            int score = Score_student();
+            string grade = Grade(score);
+            Console.WriteLine($"Student Name: {name}");
+            Console.WriteLine("Student Score: " +" " + score);
+            Console.WriteLine("Student Grade: " + " " + grade);
+        }
+        static string Name()
+        {
+            Console.WriteLine("enter your name");
+            string name = Console.ReadLine();
+            return name;
+        }
+
+        static int Score_student()
+        {
+            Console.WriteLine("enter your score");
+            int score = Convert.ToInt32(Console.ReadLine());
+            return score;
+        }
+
+        static string Grade(int score)
+        {
+            if (score >= 90)
+            {
+                return "A";
+            }
+            else if (score >= 80)
+            {
+                return "B";
+            }
+            else if (score >= 70)
+            {
+                return "C";
+            }
+            else if (score >= 60)
+            {
+                return "D";
+            }
+            else
+            {
+                return "F";
+            }
+        }
+
+        
+    }
+
+
+}
+   
+
