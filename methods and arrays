@@ -1,0 +1,69 @@
+using System;
+
+namespace mohamed
+{
+    class Methods
+    {
+        static void Main()
+        {
+            int size = Array_size();
+            int[] array = new int[size];
+            int array_input = array_elements(array);
+            int max = array_max(array);
+            int min = array_min(array);
+            Console.WriteLine($"The maximum element in the array is: {max}");
+            Console.WriteLine($"The minimum element in the array is: {min}");
+
+        }
+
+        static int Array_size()
+        {
+            Console.WriteLine("Enter the size of the array:");
+            int size = Convert.ToInt32(Console.ReadLine());
+            return size;
+        }
+
+        static int array_elements(int[] array)
+        {
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine($"Enter the elements of the array :  {i}");
+                array[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            return 0;
+        }
+
+        static int array_max(int[] arr)
+        {
+            int max = arr[0];
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
+        static int array_min(int[] arr)
+        {
+            int min = arr[0];
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                }
+            }
+            return min;
+
+        }
+
+
+    }
+
+}
+   
+
